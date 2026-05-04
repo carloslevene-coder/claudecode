@@ -4,7 +4,7 @@
     {
       "name": "Static Site",
       "runtimeExecutable": "ruby",
-      "runtimeArgs": ["-run", "-e", "httpd", "/Users/carloslevene/Desktop/CLAUDE/goodweek-deck-deploy/.claude/worktrees/suspicious-torvalds-0c96f8", "-p", "8080"],
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/goodweek-preview", "-p", "8080"],
       "port": 8080
     }
   ]
