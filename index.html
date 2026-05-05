@@ -1307,12 +1307,12 @@
       <!-- LEFT: Text column -->
       <div class="sim-text-col">
         <div class="label" id="simple-label" style="font-size: 28px; letter-spacing: 0.02em; margin-bottom: 18px;"><span id="simple-label-cursor" style="font-weight:400;animation:blink 0.6s step-end infinite;">_</span></div>
-        <h2 id="sim-heading" style="font-size: 32px; line-height: 1.15; margin-bottom: 12px; opacity:0; transition: opacity 0.3s ease;">Connected to<br>your stack.</h2>
+        <h2 id="sim-heading" style="font-size: 32px; line-height: 1.15; margin-bottom: 12px; opacity:0; transition: opacity 0.3s ease;">Know your accounts<br>before every meeting.</h2>
         <p class="subtitle" id="sim-subtitle" style="display:none; opacity:0;"></p>
         <div id="sim-checks" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px; opacity:0; transition: opacity 0.3s ease;">
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Breadth of native connectors across core business systems</div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Ability to read, write, and act across connected tools</div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> AI workflows that use current company data for context</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Pull account history, open deals and renewals in seconds</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Surface context from your CRM, email and shared documents</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Share client briefs with your team on Teams before you walk in</div>
         </div>
       </div>
 
@@ -1505,12 +1505,12 @@
       <!-- LEFT: Text column -->
       <div class="sim-text-col">
         <div class="label" id="ds-label" style="font-size: 28px; letter-spacing: 0.02em; margin-bottom: 18px;"><span id="ds-label-cursor" style="font-weight:400;animation:blink 0.6s step-end infinite;">_</span></div>
-        <h2 id="ds-heading" style="font-size: 32px; line-height: 1.15; margin-bottom: 12px; opacity:0; transition: opacity 0.3s ease;">Clean, current,<br>and complete.</h2>
+        <h2 id="ds-heading" style="font-size: 32px; line-height: 1.15; margin-bottom: 12px; opacity:0; transition: opacity 0.3s ease;">Catch at-risk clients<br>before they churn.</h2>
         <p class="subtitle" id="ds-subtitle" style="display:none; opacity:0;"></p>
         <div id="ds-checks" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px; opacity:0; transition: opacity 0.3s ease;">
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Reconcile records across sources of truth</div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Catch missing, stale, and duplicate records</div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Write fixes back to the system of record</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Identify contracts expiring with no recent contact</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Flag at-risk accounts across your entire client base</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Draft outreach emails and share risk lists with your team</div>
         </div>
       </div>
 
@@ -3085,7 +3085,7 @@
     if (_simTextTypeTimer) { clearInterval(_simTextTypeTimer); _simTextTypeTimer = null; }
     if (_simTextAnimTimer) { clearTimeout(_simTextAnimTimer); _simTextAnimTimer = null; }
     var simHeading = document.getElementById('sim-heading');
-    if (simHeading) { simHeading.style.opacity = '0'; simHeading.innerHTML = 'Connected to<br>your stack.'; }
+    if (simHeading) { simHeading.style.opacity = '0'; simHeading.innerHTML = 'Know your accounts<br>before every meeting.'; }
     var simSubtitle = document.getElementById('sim-subtitle');
     if (simSubtitle) { simSubtitle.style.opacity = '0'; simSubtitle.style.minHeight = ''; simSubtitle.textContent = ''; }
     var simChecks = document.getElementById('sim-checks');
@@ -3573,7 +3573,7 @@
     if (_simTextTypeTimer) { clearInterval(_simTextTypeTimer); _simTextTypeTimer = null; }
     if (_simTextAnimTimer) { clearTimeout(_simTextAnimTimer); _simTextAnimTimer = null; }
     var h = document.getElementById('sim-heading');
-    if (h) { h.style.opacity = '1'; h.innerHTML = 'Connected to<br>your stack.'; }
+    if (h) { h.style.opacity = '1'; h.innerHTML = 'Know your accounts<br>before every meeting.'; }
     var s = document.getElementById('sim-subtitle');
     if (s) { s.style.opacity = '1'; s.textContent = ''; }
     var c = document.getElementById('sim-checks');
@@ -3682,10 +3682,10 @@
     // ── Simple slide text typewriter (heading → subtitle → checks) ──
   function _typeSimpleTextChain() {
     var heading = document.getElementById('sim-heading');
-    var headingText = 'Connected to\nyour stack.';
+    var headingText = 'Know your accounts\nbefore every meeting.';
     if (!heading) return;
     // Pre-reserve height to prevent layout jump
-    heading.innerHTML = 'Connected to<br>your stack.';
+    heading.innerHTML = 'Know your accounts<br>before every meeting.';
     heading.style.visibility = 'hidden'; heading.style.opacity = '1';
     var hH = heading.offsetHeight;
     heading.style.minHeight = hH + 'px';
@@ -3696,7 +3696,7 @@
     _simTextTypeTimer = setInterval(function() {
       if (hi >= headingText.length) {
         clearInterval(_simTextTypeTimer); _simTextTypeTimer = null;
-        heading.innerHTML = 'Connected to<br>your stack.';
+        heading.innerHTML = 'Know your accounts<br>before every meeting.';
         _simTextAnimTimer = setTimeout(_typeSimpleSubtitle, 100);
         return;
       }
