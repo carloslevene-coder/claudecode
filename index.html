@@ -1614,18 +1614,6 @@
                           </div>
                         </div>
                       </div>
-                      <!-- Steve's image follow-up (Nano Banana output) -->
-                      <div class="sim-teams-human-msg" style="margin-top:14px;">
-                        <div class="sim-teams-human-avatar" style="background:#4a6e4a;">ST</div>
-                        <div class="sim-teams-msg-body">
-                          <div class="sim-teams-msg-header">
-                            <span class="sim-teams-author">Steve Thompson</span>
-                            <span class="sim-teams-time">Just now</span>
-                          </div>
-                          <div class="sim-teams-plain-msg">Don't worry, I know what we have to do.</div>
-                          <img src="assets/Lazerlion.png" alt="Sales Lion" style="display:block;margin-top:8px;max-width:260px;width:100%;border-radius:8px;border:1px solid #e2e6f0;">
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -4754,33 +4742,7 @@
       if (tcb) tcb.remove();
       refill(_dsShareQ);
     } else if (prevStep === 7) {
-      // Undo step 8: remove model-switch chip, clear image prompt
-      var ms = document.getElementById('ds-model-switch-chip');
-      if (ms) ms.remove();
-      resetInput();
-    } else if (prevStep === 8) {
-      // Undo step 9: remove image user bubble, gen chip, image response
-      var iub = document.getElementById('ds-img-user-bubble');
-      if (iub) iub.remove();
-      var igc = document.getElementById('ds-img-gen-chip');
-      if (igc) igc.remove();
-      var irb = document.getElementById('ds-img-resp-bubble');
-      if (irb) irb.remove();
-      refill("Generate an image of a Sales Lion focusing like a laser on Q2.");
-    } else if (prevStep === 9) {
-      // Undo step 10: clear image-share prompt from input
-      resetInput();
-    } else if (prevStep === 10) {
-      // Undo step 11: remove image share bubble, Teams chip, confirmation
-      var isub = document.getElementById('ds-img-share-user-bubble');
-      if (isub) isub.remove();
-      var itc = document.getElementById('ds-img-teams-chip');
-      if (itc) itc.remove();
-      var icb = document.getElementById('ds-img-conf-bubble');
-      if (icb) icb.remove();
-      refill("Send this image to Len on Teams right after the $300K message. Caption: \u201CDon't worry, I know what we have to do.\u201D");
-    } else if (prevStep === 11) {
-      // Undo step 12: hide Teams overlay
+      // Undo step 8: hide Teams overlay + bot card
       var overlay = document.getElementById('ds-teams-overlay');
       if (overlay) overlay.classList.remove('visible');
       var botCard = document.getElementById('ds-teams-bot-card');
@@ -6283,102 +6245,13 @@
         slideDataStep = 7; return;
       }
 
-      // Nano Banana (Gemini image) prompts
-      var _dsImgPromptQ = "Generate an image of a Sales Lion focusing like a laser on Q2.";
-      var _dsImgShareQ = "Send this image to Len on Teams right after the $300K message. Caption: \u201CDon't worry, I know what we have to do.\u201D";
-      var _geminiImg = '<img src="assets/ai-models/gemini.jpeg" width="14" height="14" style="border-radius:3px;vertical-align:middle;margin-right:2px;">';
-
       if (slideDataStep === 7) {
-        // Step 8: Switch model to Nano Banana + typewriter the image prompt
+        // Step 8: Reveal Teams overlay — Steve's reply + renewal risk summary card
         if (_dsTypeTimer) { clearInterval(_dsTypeTimer); _dsTypeTimer = null; }
-        // Finalize the Teams-confirm bubble in case typewriter was mid-flight
         var confEl = document.getElementById('ds-teams-conf-content');
         if (confEl && confEl.innerHTML.indexOf('posted') === -1) {
           confEl.innerHTML = '<p>Done &mdash; posted the renewal risk list to <strong>#sales-leadership</strong>. 4 clients flagged, <strong style="color:#ff8a65;">&euro;31.4K</strong> at stake. <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">Open Teams &rarr;</a></p>';
         }
-        // Model-switch notification chip
-        var switchChip = document.createElement('div');
-        switchChip.className = 'sim-rw-chip';
-        switchChip.id = 'ds-model-switch-chip';
-        switchChip.innerHTML = '<div class="sim-rw-icon">' + _geminiImg.replace('width="14"', 'width="18"').replace('height="14"', 'height="18"').replace('margin-right:2px;', '') + '</div>Switched model \u2192 <strong>Nano Banana</strong> (Gemini 2.5 Flash Image)<span class="sim-rw-check">&#10003;</span>';
-        dsChatArea.appendChild(switchChip);
-        dsChatArea.scrollTop = dsChatArea.scrollHeight;
-        // Type the image-generation prompt
-        _dsTypeInto('ds-input-field', _dsImgPromptQ);
-        slideDataStep = 8; return;
-      }
-      if (slideDataStep === 8) {
-        // Step 9: Submit image prompt → AI generates the Sales Lion
-        if (_dsTypeTimer) { clearInterval(_dsTypeTimer); _dsTypeTimer = null; }
-        _dsResetInputBar();
-        var imgUser = document.createElement('div');
-        imgUser.className = 'sim-bubble user';
-        imgUser.id = 'ds-img-user-bubble';
-        imgUser.textContent = _dsImgPromptQ;
-        dsChatArea.appendChild(imgUser);
-        // AI "generating" chip
-        var genChip = document.createElement('div');
-        genChip.className = 'sim-rw-chip';
-        genChip.id = 'ds-img-gen-chip';
-        genChip.innerHTML = '<div class="sim-rw-icon">' + _geminiImg.replace('width="14"', 'width="18"').replace('height="14"', 'height="18"').replace('margin-right:2px;', '') + '</div>Generating image with Nano Banana<span class="sim-rw-check">&#10003;</span>';
-        dsChatArea.appendChild(genChip);
-        // AI image response bubble
-        var imgResp = document.createElement('div');
-        imgResp.className = 'sim-bubble assistant';
-        imgResp.id = 'ds-img-resp-bubble';
-        var imgContent = document.createElement('div');
-        imgContent.className = 'sim-response';
-        imgContent.id = 'ds-img-resp-content';
-        imgContent.innerHTML = '<p>Here\u2019s your Sales Lion, zeroed in on Q2:</p><img src="assets/Lazerlion.png" alt="Sales Lion" style="display:block;margin-top:8px;max-width:320px;width:100%;border-radius:10px;border:1px solid #e2e6f0;">';
-        imgResp.appendChild(imgContent);
-        var imgModelTag = document.createElement('div');
-        imgModelTag.className = 'sim-model-tag';
-        imgModelTag.innerHTML = _geminiImg + ' Nano Banana (Gemini 2.5 Flash Image) &#9662;';
-        imgResp.appendChild(imgModelTag);
-        dsChatArea.appendChild(imgResp);
-        dsChatArea.scrollTop = dsChatArea.scrollHeight;
-        slideDataStep = 9; return;
-      }
-      if (slideDataStep === 9) {
-        // Step 10: Typewriter the "send image to Len after $300K message" prompt
-        if (_dsTypeTimer) { clearInterval(_dsTypeTimer); _dsTypeTimer = null; }
-        _dsTypeInto('ds-input-field', _dsImgShareQ);
-        slideDataStep = 10; return;
-      }
-      if (slideDataStep === 10) {
-        // Step 11: Submit image-share prompt + Teams chip + AI confirms
-        if (_dsTypeTimer) { clearInterval(_dsTypeTimer); _dsTypeTimer = null; }
-        _dsResetInputBar();
-        var imgShareUB = document.createElement('div');
-        imgShareUB.className = 'sim-bubble user';
-        imgShareUB.id = 'ds-img-share-user-bubble';
-        imgShareUB.textContent = _dsImgShareQ;
-        dsChatArea.appendChild(imgShareUB);
-        var imgTeamsChip = document.createElement('div');
-        imgTeamsChip.className = 'sim-rw-chip';
-        imgTeamsChip.id = 'ds-img-teams-chip';
-        imgTeamsChip.innerHTML = '<div class="sim-rw-icon">' + _teamsSVG_D + '</div>Writing image to Microsoft Teams<span class="sim-rw-check">&#10003;</span>';
-        dsChatArea.appendChild(imgTeamsChip);
-
-        var imgConfDiv = document.createElement('div');
-        imgConfDiv.className = 'sim-bubble assistant';
-        imgConfDiv.id = 'ds-img-conf-bubble';
-        var imgConfContent = document.createElement('div');
-        imgConfContent.className = 'sim-response';
-        imgConfContent.id = 'ds-img-conf-content';
-        imgConfDiv.appendChild(imgConfContent);
-        var mt4 = document.createElement('div');
-        mt4.className = 'sim-model-tag';
-        mt4.innerHTML = _claudeImgD + ' Claude Sonnet 4.6 &#9662;';
-        imgConfDiv.appendChild(mt4);
-        dsChatArea.appendChild(imgConfDiv);
-        var imgConfHTML = '<p>Sent &mdash; Sales Lion posted right below the $300K summary in <strong>#finance</strong>, with your caption. <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">Open Teams chat &rarr;</a></p>';
-        _dsTypewriteHTML(imgConfDiv, imgConfContent, imgConfHTML);
-        slideDataStep = 11; return;
-      }
-      if (slideDataStep === 11) {
-        // Step 12: Reveal Teams overlay — Steve's reply + summary card + lion image follow-up
-        if (_dsTypeTimer) { clearInterval(_dsTypeTimer); _dsTypeTimer = null; }
         var overlay = document.getElementById('ds-teams-overlay');
         var botCard = document.getElementById('ds-teams-bot-card');
         if (overlay) {
@@ -6391,7 +6264,7 @@
             }
           }, 200);
         }
-        slideDataStep = 12; return;
+        slideDataStep = 8; return;
       }
     }
 
