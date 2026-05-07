@@ -1310,7 +1310,7 @@
         <h2 id="sim-heading" style="font-size: 32px; line-height: 1.15; margin-bottom: 12px; opacity:0; transition: opacity 0.3s ease;">Stop doing<br>housekeeping manually.</h2>
         <p class="subtitle" id="sim-subtitle" style="display:none; opacity:0;"></p>
         <div id="sim-checks" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px; opacity:0; transition: opacity 0.3s ease;">
-          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Scan ConnectWise for stale tickets &mdash; close, reassign, or flag in bulk</div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Upload your ticket export &mdash; close, reassign, or flag stale tickets in bulk</div>
           <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> Find outdated client files in SharePoint &mdash; archive, rename, or flag duplicates</div>
           <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 19px; line-height: 1.4; color: var(--gray4);"><span style="color: var(--primary); font-weight: 700; font-size: 22px; line-height: 1.2;">&#10003;</span> All changes applied directly &mdash; no copy-paste, no manual work</div>
         </div>
@@ -1382,12 +1382,12 @@
                 <!-- Left panel: tool nav -->
                 <div class="sim-teams-channels" style="background:#1a2235;">
                   <div style="display:flex;align-items:center;gap:7px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:12px;">
-                    <svg viewBox="0 0 32 32" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="#E5222A"/><path d="M8 24V8h4v6h8V8h4v16h-4v-7H12v7z" fill="white"/></svg>
-                    <span style="color:#fff;font-size:13px;font-weight:600;">ConnectWise</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="#818cf8"/><polyline points="14,2 14,8 20,8" fill="none" stroke="white" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke="white" stroke-width="1.5"/><line x1="16" y1="17" x2="8" y2="17" stroke="white" stroke-width="1.5"/><line x1="10" y1="9" x2="8" y2="9" stroke="white" stroke-width="1.5"/></svg>
+                    <span style="color:#fff;font-size:13px;font-weight:600;">tickets_export.csv</span>
                   </div>
                   <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">Tickets</div>
-                  <div class="sim-teams-channel" style="color:rgba(255,255,255,0.5);">All open</div>
-                  <div class="sim-teams-channel active">&#128197; Updated now</div>
+                  <div class="sim-teams-channel" style="color:rgba(255,255,255,0.5);">47 reviewed</div>
+                  <div class="sim-teams-channel active">&#9989; 19 processed</div>
                   <div style="height:1px;background:rgba(255,255,255,0.1);margin:12px 0;"></div>
                   <div style="display:flex;align-items:center;gap:7px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:12px;">
                     <svg viewBox="0 0 32 32" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="#0078D4"/><path d="M7 10h18v2H7zm0 5h18v2H7zm0 5h12v2H7z" fill="white"/></svg>
@@ -1415,7 +1415,7 @@
                           <div class="sim-teams-card">
                             <div class="sim-teams-card-title">&#129529; Weekly Housekeeping &mdash; Both systems updated</div>
                             <div class="sim-teams-card-body">
-                              <div style="font-size:11px;font-weight:700;color:#6673a0;text-transform:uppercase;letter-spacing:0.06em;margin:4px 0 6px;">ConnectWise &mdash; 19 tickets</div>
+                              <div style="font-size:11px;font-weight:700;color:#6673a0;text-transform:uppercase;letter-spacing:0.06em;margin:4px 0 6px;">Ticket export &mdash; 19 tickets</div>
                               <table>
                                 <tr><th>Action</th><th>Count</th><th>Reason</th></tr>
                                 <tr><td>&#9989; Closed</td><td style="color:#22c55e;font-weight:700;">12</td><td style="color:#8896cc;">No activity 7+ days, resolved</td></tr>
@@ -1429,7 +1429,7 @@
                                 <tr><td>&#9999;&#65039; Renamed</td><td style="color:#4a9eff;font-weight:700;">12</td><td style="color:#8896cc;">Added client prefix</td></tr>
                                 <tr><td>&#128277; Flagged</td><td style="color:#ff8a65;font-weight:700;">6</td><td style="color:#8896cc;">Duplicates, needs review</td></tr>
                               </table>
-                              <div style="margin-top:8px;font-size:11px;color:#8896cc;">Sources: ConnectWise &bull; SharePoint &nbsp;&mdash;&nbsp; Generated by Goodweek AI</div>
+                              <div style="margin-top:8px;font-size:11px;color:#8896cc;">Sources: tickets_export.csv &bull; SharePoint &nbsp;&mdash;&nbsp; Generated by Goodweek AI</div>
                               <div class="sim-teams-card-action">&#128279; Open in Goodweek</div>
                             </div>
                           </div>
@@ -1441,14 +1441,6 @@
               </div>
               <div class="sim-apps-strip">
                 <span class="sim-apps-label">APPS</span>
-                <!-- ConnectWise -->
-                <div class="sim-app-pill">
-                  <div class="sim-app-icon-wrap">
-                    <svg viewBox="0 0 32 32" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="5" fill="#E5222A"/><path d="M8 24V8h4v6h8V8h4v16h-4v-7H12v7z" fill="white"/></svg>
-                    <span class="sim-app-dot"></span>
-                  </div>
-                  <span class="sim-app-name">ConnectWise</span>
-                </div>
                 <!-- SharePoint -->
                 <div class="sim-app-pill">
                   <div class="sim-app-icon-wrap">
@@ -4612,17 +4604,30 @@
       if (sendBtn) sendBtn.classList.remove('active');
     }
 
-    var _s5PromptQ = "Run the weekly housekeeping: close stale tickets in ConnectWise (no update in 5+ days) and archive outdated client files in SharePoint.";
+    var _s5PromptQ = "Run housekeeping on these tickets — handle stale ones from the export and clean up outdated files in SharePoint.";
     var _s5ApplyQ = "Apply all those changes.";
 
     if (prevStep === 0) {
       resetInput();
+      var fcRm = document.getElementById('sim-file-attach-chip');
+      if (fcRm) fcRm.remove();
     } else if (prevStep === 1) {
       var bubbles = chatArea ? chatArea.querySelectorAll('.sim-bubble') : [];
       bubbles.forEach(function(b) { b.remove(); });
       var h2c = document.getElementById('sim-h2-chip');
       if (h2c) h2c.remove();
       if (greeting) greeting.style.display = '';
+      // Re-inject file chip into input
+      var simInputField = document.getElementById('sim-input-field');
+      var existingFC2 = document.getElementById('sim-file-attach-chip');
+      if (existingFC2) existingFC2.remove();
+      if (simInputField) {
+        var fileChip2 = document.createElement('span');
+        fileChip2.id = 'sim-file-attach-chip';
+        fileChip2.style.cssText = 'display:inline-flex;align-items:center;gap:4px;background:#ede9ff;border:1px solid #c4b5fd;border-radius:6px;padding:2px 8px;font-size:11px;color:#5b21b6;margin-right:6px;vertical-align:middle;flex-shrink:0;white-space:nowrap;';
+        fileChip2.innerHTML = '&#128206; tickets_export.csv';
+        simInputField.insertBefore(fileChip2, inputText);
+      }
       if (inputText) inputText.textContent = _s5PromptQ;
       if (placeholder) placeholder.style.display = 'none';
       if (cursor) cursor.style.display = '';
@@ -5717,17 +5722,18 @@
       var simChatArea = document.getElementById('sim-chat-area');
       var _claudeImg = '<img src="assets/ai-models/claude.png" width="14" height="14" style="border-radius:3px;vertical-align:middle;margin-right:2px;">';
 
-      var _s5PromptQ = "Run the weekly housekeeping: close stale tickets in ConnectWise (no update in 5+ days) and archive outdated client files in SharePoint.";
+      var _s5PromptQ = "Run housekeeping on these tickets — handle stale ones from the export and clean up outdated files in SharePoint.";
       var _s5ApplyQ = "Apply all those changes.";
 
-      // ConnectWise SVG
-      var _cwSVG = '<svg viewBox="0 0 32 32" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="5" fill="#E5222A"/><path d="M8 24V8h4v6h8V8h4v16h-4v-7H12v7z" fill="white"/></svg>';
+      // File/CSV SVG (for uploaded ticket export)
+      var _fileSVG = '<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="#818cf8"/><polyline points="14,2 14,8 20,8" fill="none" stroke="white" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke="white" stroke-width="1.5"/><line x1="16" y1="17" x2="8" y2="17" stroke="white" stroke-width="1.5"/><line x1="10" y1="9" x2="8" y2="9" stroke="white" stroke-width="1.5"/></svg>';
       // SharePoint SVG
       var _spSVG = '<svg viewBox="0 0 18 18" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><rect width="18" height="18" rx="3" fill="#0078D4"/><circle cx="9" cy="9" r="5" fill="white" opacity="0.9"/><circle cx="9" cy="9" r="3" fill="#0078D4"/></svg>';
 
       if (slideSimStep === 0) {
         _finalizeSimpleText();
         clearTimeout(_simAnimTimer);
+        var simInputField = document.getElementById('sim-input-field');
         var simInputText = document.getElementById('sim-input-text');
         var simPlaceholder = document.getElementById('sim-input-placeholder');
         var simCursor = document.getElementById('sim-cursor');
@@ -5735,6 +5741,16 @@
         if (simPlaceholder) simPlaceholder.style.display = 'none';
         if (simCursor) simCursor.style.display = '';
         if (simInputText) simInputText.textContent = '';
+        // Inject file attachment chip into input
+        var existingFC = document.getElementById('sim-file-attach-chip');
+        if (existingFC) existingFC.remove();
+        if (simInputField) {
+          var fileChip = document.createElement('span');
+          fileChip.id = 'sim-file-attach-chip';
+          fileChip.style.cssText = 'display:inline-flex;align-items:center;gap:4px;background:#ede9ff;border:1px solid #c4b5fd;border-radius:6px;padding:2px 8px;font-size:11px;color:#5b21b6;margin-right:6px;vertical-align:middle;flex-shrink:0;white-space:nowrap;';
+          fileChip.innerHTML = '&#128206; tickets_export.csv';
+          simInputField.insertBefore(fileChip, simInputText);
+        }
         var si = 0;
         if (_simTypeTimer) clearInterval(_simTypeTimer);
         _simTypeTimer = setInterval(function() {
@@ -5749,7 +5765,7 @@
       }
 
       if (slideSimStep === 1) {
-        // Submit — user bubble + dual read chip (ConnectWise + SharePoint)
+        // Submit — user bubble with file attachment + dual read chip (CSV + SharePoint)
         if (_simTypeTimer) { clearInterval(_simTypeTimer); _simTypeTimer = null; }
         var simInputText = document.getElementById('sim-input-text');
         var simPlaceholder = document.getElementById('sim-input-placeholder');
@@ -5759,17 +5775,19 @@
         if (simInputText) simInputText.textContent = '';
         if (simPlaceholder) simPlaceholder.style.display = '';
         if (simSendBtn) simSendBtn.classList.remove('active');
+        var fcToRemove = document.getElementById('sim-file-attach-chip');
+        if (fcToRemove) fcToRemove.remove();
         var simGreeting = document.getElementById('sim-greeting');
         if (simGreeting) simGreeting.style.display = 'none';
         var ub = document.createElement('div');
         ub.className = 'sim-bubble user';
         ub.id = 'sim-user-bubble-1';
-        ub.textContent = _s5PromptQ;
+        ub.innerHTML = '<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:4px 10px;font-size:12px;margin-bottom:6px;">&#128206; tickets_export.csv</div><br>' + _s5PromptQ;
         simChatArea.appendChild(ub);
         var readChip = document.createElement('div');
         readChip.className = 'sim-rw-chip';
         readChip.id = 'sim-h2-chip';
-        readChip.innerHTML = '<div class="sim-rw-icons"><div class="sim-rw-icon">' + _cwSVG + '</div><div class="sim-rw-icon">' + _spSVG + '</div></div>Checking ConnectWise &amp; SharePoint<span class="sim-rw-check">&#10003;</span>';
+        readChip.innerHTML = '<div class="sim-rw-icons"><div class="sim-rw-icon">' + _fileSVG + '</div><div class="sim-rw-icon">' + _spSVG + '</div></div>Reading tickets_export.csv &amp; SharePoint<span class="sim-rw-check">&#10003;</span>';
         simChatArea.appendChild(readChip);
         simChatArea.scrollTop = simChatArea.scrollHeight;
         slideSimStep = 2; return;
@@ -5791,7 +5809,7 @@
         respDiv.appendChild(modelTag);
         simChatArea.appendChild(respDiv);
         simChatArea.scrollTop = simChatArea.scrollHeight;
-        var respHTML = '<p><strong>ConnectWise:</strong> 47 open tickets reviewed &mdash; <strong style="color:#ff8a65;">19 have had no update in 5+ days.</strong></p>' +
+        var respHTML = '<p><strong>tickets_export.csv:</strong> 47 tickets reviewed &mdash; <strong style="color:#ff8a65;">19 have had no update in 5+ days.</strong></p>' +
           '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;">' +
           '<tr style="border-bottom:1px solid #e0e4f0;"><th style="text-align:left;padding:5px 8px;color:#6673a0;">Action</th><th style="text-align:right;padding:5px 8px;color:#6673a0;">Count</th><th style="text-align:left;padding:5px 8px;color:#6673a0;">Reason</th></tr>' +
           '<tr style="border-bottom:1px solid #f0f2f8;"><td style="padding:5px 8px;">&#9989; Close</td><td style="text-align:right;padding:5px 8px;color:#22c55e;font-weight:700;">12</td><td style="padding:5px 8px;color:#8896cc;">Resolved, no reply needed</td></tr>' +
@@ -5903,7 +5921,7 @@
         var cwChip = document.createElement('div');
         cwChip.className = 'sim-rw-chip';
         cwChip.id = 'sim-cw-write-chip';
-        cwChip.innerHTML = '<div class="sim-rw-icon">' + _cwSVG + '</div>Updating ConnectWise &mdash; 19 tickets<span class="sim-rw-check">&#10003;</span>';
+        cwChip.innerHTML = '<div class="sim-rw-icon">' + _fileSVG + '</div>Exporting tickets_processed.csv<span class="sim-rw-check">&#10003;</span>';
         simChatArea.appendChild(cwChip);
         var spChip = document.createElement('div');
         spChip.className = 'sim-rw-chip';
@@ -5929,7 +5947,7 @@
         confModelTag.innerHTML = _claudeImg + ' Claude Sonnet 4.6 &#9662;';
         confDiv.appendChild(confModelTag);
         simChatArea.appendChild(confDiv);
-        var confHTML = '<p>Done &mdash; both systems updated. <strong style="color:#22c55e;">19 tickets</strong> handled in ConnectWise (12 closed, 4 reassigned, 3 flagged) and <strong style="color:#4a9eff;">52 files</strong> processed in SharePoint (34 archived, 12 renamed, 6 flagged). <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">View full report &rarr;</a></p>';
+        var confHTML = '<p>Done &mdash; <strong style="color:#22c55e;">19 tickets</strong> processed from your export (12 closed, 4 reassigned, 3 flagged) and <strong style="color:#4a9eff;">52 files</strong> cleaned in SharePoint (34 archived, 12 renamed, 6 flagged). <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">View full report &rarr;</a></p>';
         var plain3 = confHTML.replace(/<[^>]+>/g, '');
         var total3 = plain3.length; var idx3 = 0;
         if (_simTypeTimer) clearInterval(_simTypeTimer);
@@ -5954,7 +5972,7 @@
         if (_simTypeTimer) { clearInterval(_simTypeTimer); _simTypeTimer = null; }
         var confEl = document.getElementById('sim-conf-content');
         if (confEl && confEl.innerHTML.indexOf('Done') === -1) {
-          confEl.innerHTML = '<p>Done &mdash; both systems updated. <strong style="color:#22c55e;">19 tickets</strong> handled in ConnectWise (12 closed, 4 reassigned, 3 flagged) and <strong style="color:#4a9eff;">52 files</strong> processed in SharePoint (34 archived, 12 renamed, 6 flagged). <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">View full report &rarr;</a></p>';
+          confEl.innerHTML = '<p>Done &mdash; <strong style="color:#22c55e;">19 tickets</strong> processed from your export (12 closed, 4 reassigned, 3 flagged) and <strong style="color:#4a9eff;">52 files</strong> cleaned in SharePoint (34 archived, 12 renamed, 6 flagged). <a href="#" style="color:#4a9eff;text-decoration:none;border-bottom:1px dashed #4a9eff;">View full report &rarr;</a></p>';
         }
         var teamsOverlay = document.getElementById('sim-teams-overlay');
         var teamsBotCard = document.getElementById('sim-teams-bot-card');
